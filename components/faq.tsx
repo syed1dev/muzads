@@ -30,23 +30,25 @@ const faqs = [
   },
 ]
 
-export function FAQ() {
+export function FAQ({ showHeader = true }: { showHeader?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
     <section id="faq" className="py-24 px-4">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-16 opacity-0 animate-fade-in-up">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            FAQ
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Frequently asked questions
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Everything you need to know about Muzads
-          </p>
-        </div>
+        {showHeader && (
+          <div className="text-center mb-16 opacity-0 animate-fade-in-up">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              FAQ
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+              Frequently asked questions
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Everything you need to know about Muzads
+            </p>
+          </div>
+        )}
 
         <div className="space-y-3">
           {faqs.map((faq, index) => (

@@ -50,7 +50,7 @@ export function Footer() {
                       <Link
                         href={
                           link === "Login" ? "/login" : 
-                          link === "FAQ" ? "#faq" : 
+                          link === "FAQ" ? "/faq" : 
                           link === "Blog" ? "/blog" : 
                           link === "How it works" ? "#how-it-works" : 
                           "#"

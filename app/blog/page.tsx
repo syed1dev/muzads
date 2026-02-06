@@ -1,5 +1,8 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import { Navbar } from "@/components/navbar"
+import { CTASection } from "@/components/cta-section"
+import { Footer } from "@/components/footer"
 
 const blogPosts = [
   {
@@ -55,31 +58,55 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <main className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="pt-24 pb-12 px-4 border-b border-border">
-        <div className="max-w-6xl mx-auto">
-          <Link 
-            href="/" 
+      <Navbar />
+
+      {/* Hero */}
+      <section className="relative pt-32 pb-16 px-4 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-[460px] h-[460px] bg-blue-500/10 rounded-full blur-3xl animate-pulse-glow" />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-[360px] h-[360px] bg-cyan-500/10 rounded-full blur-3xl animate-pulse-glow"
+            style={{ animationDelay: "1.2s" }}
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[560px] bg-gradient-radial from-blue-500/5 to-transparent rounded-full" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto">
+          {/* <Link
+            href="/"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to home
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Blog</h1>
+          </Link> */}
+
+          <div className="inline-flex p-[2px] rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background">
+              <span className="text-sm text-muted-foreground">Insights</span>
+            </div>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 text-balance">
+            The{" "}
+            <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Muzads
+            </span>{" "}
+            Blog
+          </h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
             Insights, tips, and strategies for modern marketers. Learn how to create better content and grow your business.
           </p>
         </div>
-      </header>
+      </section>
 
       {/* Blog Grid */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <article 
                 key={post.id}
-                className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all cursor-pointer"
+                className="group p-6 rounded-2xl bg-card/80 backdrop-blur border border-border/60 hover:border-primary/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 transition-all cursor-pointer"
               >
                 <div className="mb-4">
                   <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
@@ -102,6 +129,9 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      <CTASection />
+      <Footer />
     </main>
   )
 }
