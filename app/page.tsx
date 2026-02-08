@@ -25,7 +25,7 @@ export default function Page() {
       <BrandDNA />
       <BusinessTypes />
       <Stats />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Pricing />
       <FAQ />
       <CTASection />
