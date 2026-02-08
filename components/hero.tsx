@@ -6,26 +6,26 @@ import { Star, Zap, Shield, ArrowRight, Play } from "lucide-react"
 export function Hero() {
   return (
     <section className="relative pt-32 pb-24 px-4 overflow-hidden">
-      {/* Background effects */}
+      {/* Background effects updated for new brand */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-500/5 to-transparent rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-red-500/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-purple-500/5 to-transparent rounded-full" />
       </div>
 
       <div className="relative max-w-6xl mx-auto text-center">
-        {/* Announcement badge */}
-        <div className="inline-flex p-[2px] rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 mb-8">
+        {/* Announcement badge updated */}
+        <div className="inline-flex p-[2px] rounded-full bg-gradient-brand mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background">
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">AI for Marketing</span>
+            <span className="text-sm font-medium text-gradient-brand">AI for Marketing</span>
           </div>
         </div>
 
-        {/* Main headline */}
+        {/* Main headline updated */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-8 opacity-0 animate-fade-in-up stagger-1">
           <span className="text-balance block">Launch 10x more</span>
-          <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">content.</span>{" "}
+          <span className="text-gradient-brand">content.</span>{" "}
           <span className="text-muted-foreground/70">75% faster.</span>
         </h1>
 
@@ -35,23 +35,23 @@ export function Hero() {
           Hundreds of content pieces generated, while you sleep.
         </p>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - styling updated via global btn-gradient */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 opacity-0 animate-fade-in-up stagger-3">
           <Button 
             size="lg" 
-            className="btn-gradient rounded-full text-lg px-8 py-6 h-auto shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+            className="btn-gradient rounded-full text-lg px-8 py-6 h-auto shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300"
           >
             Buy now
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
-          {/* <Button 
+          
+          <Button 
             size="lg" 
             variant="outline" 
-            className="text-foreground border-border hover:bg-secondary text-lg px-8 py-6 h-auto bg-transparent rounded-full group"
+            className="rounded-full text-lg px-8 py-6 h-auto border-purple-500/50 text-foreground hover:bg-purple-500/10 hover:border-purple-500 transition-all duration-300 group"
           >
-            <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-            Watch demo
-          </Button> */}
+            <span className="bg-gradient-brand bg-clip-text text-transparent group-hover:text-primary transition-all">Keywords Search</span>
+          </Button>
         </div>
 
         {/* Trust badges */}

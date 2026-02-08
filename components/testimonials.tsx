@@ -1,6 +1,7 @@
 "use client"
 
 import { Star, Quote } from "lucide-react"
+import { FadeIn } from "@/components/ui/fade-in"
 
 const testimonials = [
   {
@@ -51,19 +52,20 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-24 px-4 bg-secondary/20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Built for people doing the work.
           </h2>
           <p className="text-muted-foreground text-lg">
             Used by those who move fast.
           </p>
-        </div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial) => (
-            <div
+          {testimonials.map((testimonial, index) => (
+            <FadeIn
               key={testimonial.name}
+              delay={index * 100}
               className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all"
             >
               <div className="flex items-center gap-1 mb-4">
@@ -93,15 +95,15 @@ export function Testimonials() {
                   </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <FadeIn delay={600} className="text-center mt-12">
           <p className="text-muted-foreground">
             <span className="text-primary font-bold">4268+</span> founders love Muzads
           </p>
-        </div>
+        </FadeIn>
       </div>
     </section>
   )

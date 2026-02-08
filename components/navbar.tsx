@@ -11,30 +11,24 @@ import {
   Mail,
   User,
   Sparkles,
+  FileText,
+  Search,
+  Link2,
+  PenTool,
 } from "lucide-react"
 
 
 const useCases = [
   {
-    label: "Facebook Ads Maker",
+    label: "Facebook Ads Compaign",
     href: "/use-cases/facebook-ads",
     icon: Facebook,
   },
-  // {
-  //   label: "AI Newsletter Generator",
-  //   href: "/use-cases/newsletter",
-  //   icon: Mail,
-  // },
   {
-    label: "Instagram Ads Maker",
+    label: "Instagram Ads Compaign",
     href: "/use-cases/instagram-ads",
     icon: Instagram,
   },
-  // {
-  //   label: "AI UGC Generator",
-  //   href: "/use-cases/ugc",
-  //   icon: User,
-  // },
   {
     label: "TikTok Video Generator",
     href: "/use-cases/tiktok",
@@ -45,11 +39,26 @@ const useCases = [
     href: "/use-cases/ads",
     icon: Sparkles,
   },
-  // {
-  //   label: "Influencer Generator",
-  //   href: "/use-cases/influencer",
-  //   icon: User,
-  // },
+  {
+    label: "Audit Report",
+    href: "/use-cases/audit-report",
+    icon: FileText,
+  },
+  {
+    label: "Keywords Search",
+    href: "/use-cases/keywords-search",
+    icon: Search,
+  },
+  {
+    label: "Back Link",
+    href: "/use-cases/back-link",
+    icon: Link2,
+  },
+  {
+    label: "Blog Writing",
+    href: "/use-cases/blog-writing",
+    icon: PenTool,
+  },
 ]
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -72,7 +81,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
               <span className="text-white font-bold text-sm">M</span>
             </div>
             <span className="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
@@ -107,7 +116,7 @@ export function Navbar() {
                         className="flex items-center gap-3 px-3 py-2 rounded-xl
                        hover:bg-secondary/50 transition-colors group/item"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-blue-500 group-hover/item:to-cyan-400 group-hover/item:shadow-lg group-hover/item:shadow-blue-500/25 transition-all duration-300">
+                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover/item:bg-gradient-brand group-hover/item:shadow-lg group-hover/item:shadow-purple-500/25 transition-all duration-300">
                           <Icon className="w-4 h-4 text-primary group-hover/item:text-white transition-colors" />
                         </div>
                         <span className="text-sm font-medium text-foreground/80 group-hover/item:text-foreground transition-colors">
@@ -156,7 +165,7 @@ export function Navbar() {
               <Link href="/login">Login</Link>
             </Button>
             <Button
-              className="btn-gradient rounded-full px-6 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all"
+              className="btn-gradient rounded-full px-6 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all"
               asChild
             >
               <Link href="/register">Get started</Link>

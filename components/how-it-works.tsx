@@ -1,6 +1,7 @@
 "use client"
 
 import { Link2, Sparkles, Palette, Download } from "lucide-react"
+import { FadeIn } from "@/components/ui/fade-in"
 
 const steps = [
   {
@@ -33,7 +34,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 opacity-0 animate-fade-in-up">
+        <FadeIn className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             How it works
           </span>
@@ -43,14 +44,14 @@ export function HowItWorks() {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             From URL to published content in four simple steps
           </p>
-        </div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
-            <div
+            <FadeIn
               key={step.number}
-              className="relative group p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              delay={index * 150}
+              className="relative group p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/25">
                 {step.number}
@@ -66,7 +67,7 @@ export function HowItWorks() {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {step.description}
               </p>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </div>
