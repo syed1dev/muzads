@@ -30,7 +30,7 @@ export function Footer() {
           <div className="text-right">
             <p className="text-foreground mb-3">Want a mystery gift?</p>
             <Button 
-              className="btn-gradient rounded-full px-6 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+              className="btn-gradient rounded-full px-6 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300"
             >
               Yes please
             </Button>
@@ -89,7 +89,7 @@ export function Footer() {
             © 2025 All Rights Reserved
           </p>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center">
               <span className="text-white font-bold text-sm">M</span>
             </div>
             <span className="text-2xl font-bold text-foreground tracking-tight">
