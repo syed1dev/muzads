@@ -3,12 +3,14 @@
 import React from "react"
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, ArrowRight } from "lucide-react"
 
 export default function LoginPage() {
+  const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -17,6 +19,7 @@ export default function LoginPage() {
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 1500))
     setIsLoading(false)
+    router.push("/onboarding")
   }
 
   const handleGoogleSignIn = () => {
